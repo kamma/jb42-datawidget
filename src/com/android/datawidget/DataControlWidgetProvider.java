@@ -655,7 +655,7 @@ public class DataControlWidgetProvider extends AppWidgetProvider {
             views.setImageViewResource(R.id.img_brightness,
                     R.drawable.ic_appwidget_settings_brightness_auto_holo);
             views.setImageViewResource(R.id.ind_brightness,
-                    R.drawable.appwidget_settings_ind_on_r_holo);
+                    R.drawable.appwidget_settings_ind_on_c_holo);
         } else {
             final int brightness = getBrightness(context);
             final PowerManager pm = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
@@ -686,10 +686,10 @@ public class DataControlWidgetProvider extends AppWidgetProvider {
             // Set the ON state
             if (brightness > half) {
                 views.setImageViewResource(R.id.ind_brightness,
-                        R.drawable.appwidget_settings_ind_on_r_holo);
+                        R.drawable.appwidget_settings_ind_on_c_holo);
             } else {
                 views.setImageViewResource(R.id.ind_brightness,
-                        R.drawable.appwidget_settings_ind_off_r_holo);
+                        R.drawable.appwidget_settings_ind_off_c_holo);
             }
         }
 	}
