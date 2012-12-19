@@ -174,7 +174,7 @@
 
         <ImageView
             android:id="@+id/ind_data_tether"
-            android:src="@drawable/appwidget_settings_ind_off_r_holo"
+            android:src="@drawable/appwidget_settings_ind_off_c_holo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="fitXY"
