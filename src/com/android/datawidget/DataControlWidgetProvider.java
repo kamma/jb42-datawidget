@@ -615,6 +615,8 @@ public class DataControlWidgetProvider extends AppWidgetProvider {
 				getLaunchPendingIntent(context, BUTTON_SLEEP));
 		views.setOnClickPendingIntent(R.id.btn_data_settings,
 				getSettingsIntent(context));
+		views.setOnClickPendingIntent(R.id.btn_data_tether,
+				getTetherIntent(context));
 		views.setOnClickPendingIntent(R.id.btn_brightness,
 				getLaunchPendingIntent(context, BUTTON_BRIGHTNESS));
 
@@ -718,6 +720,15 @@ public class DataControlWidgetProvider extends AppWidgetProvider {
 
 	private static PendingIntent getSettingsIntent(Context context) {
 		Intent intent = new Intent(android.provider.Settings.ACTION_SETTINGS);
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,
+				intent, PendingIntent.FLAG_UPDATE_CURRENT);
+		return pendingIntent;
+	}
+	
+	private static PendingIntent getTetherIntent(Context context) {
+		Intent intent = new Intent();
+		intent.setClassName("com.android.settings", "com.android.settings.TetherSettings");
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,
 				intent, PendingIntent.FLAG_UPDATE_CURRENT);
